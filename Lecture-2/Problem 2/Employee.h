@@ -9,7 +9,7 @@ class Part_Time_Employee;
 
 class Employee {
 public:
-	Employee(int ID, string name, int salary) : ID(ID), name(name), salary(salary);
+	Employee(int ID, string name, int salary) : ID(ID), name(name), salary(salary) {};
 	virtual int getSalary() = 0;
 protected:
 	int ID;
