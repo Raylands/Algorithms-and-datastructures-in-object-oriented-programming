@@ -1,12 +1,7 @@
 #include "Student.h"
 
-Student::Student(int ID, string name, int subject1, int subject2, int subject3) {
-	this->ID = ID;
-	this->name = name;
-	this->subject1 = subject1;
-	this->subject2 = subject2;
-	this->subject3 = subject3;
-}
+Student::Student(int ID, string name, int subject1, int subject2, int subject3) 
+	: ID(ID), name(name), subject1(subject1), subject2(subject2), subject3(subject3) {}
 
 void Student::getStudent() {
 	cout << "ID: " << ID << endl;
@@ -19,7 +14,9 @@ void Student::getStudent() {
 char Student::totalMarks() {
 	int combined = (subject1 + subject2 + subject3) / 3;
 	
-	if (combined < 40) return 'C';
-	else if (combined < 60) return 'B';
-	else if (combined >= 60) return 'A';
+	//if (combined < 40) return 'C';
+	//else if (combined < 60) return 'B';
+	//else if (combined >= 60) return 'A';
+
+	return combined >= 40 ? combined >= 60 ? 'A' : 'B' : 'C';
 }
