@@ -7,11 +7,22 @@
 */
 
 #include <iostream>
+#include "Progession.h"
 
 using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    Absolute a(74,2000);
+    
+    for (size_t i = 0; i < 10; i++)
+    {
+        a.nextValue();
+
+        a.printProgression();
+    }
+    
+
+    cin.get();
 }
 

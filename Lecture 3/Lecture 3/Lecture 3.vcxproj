@@ -140,7 +140,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Progession.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Progession.h" />
