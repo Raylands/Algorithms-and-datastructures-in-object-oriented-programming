@@ -6,22 +6,13 @@
     starts with a specified pair of numbers as the first two values.
 */
 
-#include <iostream>
 #include "Progession.h"
-
-using namespace std;
 
 int main()
 {
-    Absolute a(74,2000);
+    Absolute a(2,200);
     
-    for (size_t i = 0; i < 10; i++)
-    {
-        a.nextValue();
-
-        a.printProgression();
-    }
-    
+    a.printProgression(13);
 
     cin.get();
 }
