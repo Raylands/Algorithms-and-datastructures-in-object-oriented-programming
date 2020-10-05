@@ -5,8 +5,8 @@
 using namespace std;
 
 void fillMatrix(int* matrix, const int& rows, const int& collums, const int& space);
-void printMatrix(int* matrix, const int& rows, const int& collums, const int& space);
-int* AddMatrix(int* matrix, int* matrix2, const int& rows, const int& collums, const int& space);
+void printMatrix(const int* matrix, const int& rows, const int& collums, const int& space);
+int* AddMatrix(const int* matrix, const int* matrix2, const int& rows, const int& collums, const int& space);
 
 int main()
 {
@@ -41,12 +41,11 @@ void fillMatrix(int* matrix, const int& rows, const int& collums, const int& spa
             {
                 matrix[i, j, k] = (rand() % 1001);
             }
-            
         }
     }
 }
 
-void printMatrix(int* matrix, const int& rows, const int& collums, const int& space) {
+void printMatrix(const int* matrix, const int& rows, const int& collums, const int& space) {
     cout << endl;
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < collums; j++) {
@@ -60,7 +59,7 @@ void printMatrix(int* matrix, const int& rows, const int& collums, const int& sp
     cout << endl;
 }
 
-int* AddMatrix(int* matrix, int* matrix2, const int& rows, const int& collums, const int& space) {
+int* AddMatrix(const int* matrix, const int* matrix2, const int& rows, const int& collums, const int& space) {
     int* newMatrix = new int[rows, collums, space];
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < collums; j++) {
