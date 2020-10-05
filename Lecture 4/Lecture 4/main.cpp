@@ -4,9 +4,9 @@
 
 using namespace std;
 
-void fillMatrix(int* matrix, const int& rows, const int& collums, const int& space);
-void printMatrix(const int* matrix, const int& rows, const int& collums, const int& space);
-int* AddMatrix(const int* matrix, const int* matrix2, const int& rows, const int& collums, const int& space);
+int*** createMatrix(const int& rows, const int& collums, const int& space);
+void printMatrix(int*** matrix, const int& rows, const int& collums, const int& space);
+int*** AddMatrix(int*** matrix, int*** matrix2, const int& rows, const int& collums, const int& space);
 
 int main()
 {
@@ -17,41 +17,47 @@ int main()
     cin >> rows;
     cout << " Input space: ";
     cin >> space;
-    int* matrix = new int [rows, collums, space];
-    int* matrix2 = new int [rows, collums, space];
 
-    fillMatrix(matrix, rows, collums, space);
-    fillMatrix(matrix2, rows, collums, space);
+    int*** matrix = createMatrix(rows, collums, space);
+    int*** matrix2 = createMatrix(rows, collums, space);
+
     printMatrix(matrix, rows, collums, space);
     printMatrix(matrix2, rows, collums, space);
-    int* matrix3 = AddMatrix(matrix, matrix2, rows, collums, space);
+    int*** matrix3 = AddMatrix(matrix, matrix2, rows, collums, space);
     printMatrix(matrix3, rows, collums, space);
 
     delete[] matrix;
     delete[] matrix2;
     delete[] matrix3;
+
     return EXIT_SUCCESS;
 }
 
-void fillMatrix(int* matrix, const int& rows, const int& collums, const int& space) {
+int*** createMatrix(const int& rows, const int& collums, const int& space) {
     srand(time(0));
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < collums; j++) {
+    int*** matrix_new = new int** [rows];
+    for (int i = 0; i < rows; i++)
+    {
+        matrix_new[i] = new int* [collums];
+        for (int j = 0; j < collums; j++)
+        {
+            matrix_new[i][j] = new int[space];
             for (int k = 0; k < space; k++)
             {
-                matrix[i, j, k] = (rand() % 1001);
+                matrix_new[i][j][k] = rand() % 1001;
             }
         }
     }
+    return matrix_new;
 }
 
-void printMatrix(const int* matrix, const int& rows, const int& collums, const int& space) {
+void printMatrix(int*** matrix, const int& rows, const int& collums, const int& space) {
     cout << endl;
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < collums; j++) {
             for (int k = 0; k < space; k++)
             {
-                cout << " | " << "Row: " << i+1 << " Collum: " << j+1 << " Space: " << k+1 << " : "<< setw(2) << (int)matrix[i, j, k];
+                cout << " | " << "Row: " << i+1 << " Collum: " << j+1 << " Space: " << k+1 << " : " << setw(4) << matrix[i][j][k];
             }
         }
         cout << " | " << endl;
@@ -59,13 +65,13 @@ void printMatrix(const int* matrix, const int& rows, const int& collums, const i
     cout << endl;
 }
 
-int* AddMatrix(const int* matrix, const int* matrix2, const int& rows, const int& collums, const int& space) {
-    int* newMatrix = new int[rows, collums, space];
+int*** AddMatrix(int*** matrix, int*** matrix2, const int& rows, const int& collums, const int& space) {
+    int*** newMatrix = createMatrix(rows, collums, space);
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < collums; j++) {
             for (int k = 0; k < space; k++)
             {
-                newMatrix[i, j, k] = matrix[i, j, k] + matrix2[i, j, k];
+                newMatrix[i][j][k] = matrix[i][j][k] + matrix2[i][j][k];
             }
         }
     }
