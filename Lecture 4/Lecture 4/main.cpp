@@ -52,7 +52,7 @@ void printMatrix(int* matrix, const int& rows, const int& collums, const int& sp
         for (int j = 0; j < collums; j++) {
             for (int k = 0; k < space; k++)
             {
-                cout << " | " << setw(2) << (int)matrix[i, j, k];
+                cout << " | " << "Row: " << i+1 << " Collum: " << j+1 << " Space: " << k+1 << " : "<< setw(2) << (int)matrix[i, j, k];
             }
         }
         cout << " | " << endl;
