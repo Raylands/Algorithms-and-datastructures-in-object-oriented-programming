@@ -4,7 +4,7 @@ using namespace std;
 
 class Node
 {
-    Node(string data) : data(data) { ; };
+    Node(string data = "") : data(data) { ; };
     const string data;
 
     Node* next = NULL;
@@ -14,7 +14,7 @@ class Node
 
 struct List
 {
-    List(string data = ""):head(new Node(data)) { ; };
+    List(string data = "") : head(new Node(data)) { ; };
 
     void addNode(string data = "") {
         auto old_head = head;
@@ -32,7 +32,7 @@ struct List
         for (int i = 0; i < element; i++)
         {
             if (current->next) current = current->next;
-            else return current->data;
+            else break;
         }
 
         return current->data;
@@ -67,6 +67,6 @@ int main()
     list.addNode("Another test5");
     list.addNode("Another test6");
     cout << "First element: " << list.getFirst() << endl;
-    cout << "3rd element: " << list.getElement(2) << endl;
+    cout << "3rd element: " << list.getElement(3) << endl;
     cout << list.findMiddle();
 }
