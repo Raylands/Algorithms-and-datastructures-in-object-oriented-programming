@@ -96,7 +96,11 @@ int main()
 	}
 }
 
-
+/// <summary>
+/// Returns a Animal vector with randomly filled animals.
+/// </summary>
+/// <param name="size; it is the size of the vector"></param>
+/// <returns></returns>
 vector<Animal> fillPopulation(int size) {
 	vector<Animal> tmp_population;
 	tmp_population.reserve(size);
