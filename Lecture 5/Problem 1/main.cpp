@@ -44,6 +44,7 @@ int main()
 				population[animal1] = Animal(nil, male, 0);
 			else population[animal2] = Animal(nil, male, 0);
 		}
+
 		//If the animals are the same type, check if they are of different genders. If true, add a new entity.
 		else if (population[animal1].getGender() != population[animal2].getGender())
 		{
@@ -66,6 +67,7 @@ int main()
 				}
 			}
 		}
+
 		//Deletes the weaker entity.
 		else
 		{
