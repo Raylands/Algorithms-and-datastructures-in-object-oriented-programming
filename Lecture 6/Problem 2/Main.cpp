@@ -14,7 +14,6 @@ int main()
 
 int log2(int number)
 {
-    if (number == 1)
-        return 0;
+    if (number <= 1) return 0;
     return 1 + log2(number / 2);
 }
