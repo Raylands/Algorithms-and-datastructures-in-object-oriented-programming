@@ -1,20 +1,25 @@
-// Moving Average.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+#include "Filehandling.hpp"
 
-#include <iostream>
+using namespace std;
 
-int main()
-{
-    std::cout << "Hello World!\n";
+int main(int argc, char** argv) {
+	string file_location;
+	cout << "File name of input file (leave empty for data.txt): ";
+	std::getline(std::cin, file_location);
+	if (file_location.empty()) file_location = "data.txt";
+
+	while (true)
+	{
+		if (GetAsyncKeyState(VK_SPACE)) break;
+
+		if (!check_change(file_location)) continue;
+		if (!read_data(file_location)) {
+			cout << "\nFile not found!" << endl;
+			return EXIT_FAILURE;
+		}
+
+		cout << "\nJust update the file to update the data.\n\nPress SPACE to exit!\n";
+	}
+
+	return EXIT_SUCCESS;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
