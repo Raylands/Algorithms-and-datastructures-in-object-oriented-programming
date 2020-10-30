@@ -18,6 +18,8 @@ int main(int argc, char** argv) {
 			return EXIT_FAILURE;
 		}
 
+		cout << "Current Simple Moving Average: " << simple_moving_average() << endl;
+
 		cout << "\nJust update the file to update the data.\n\nPress SPACE to exit!\n";
 	}
 

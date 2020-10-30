@@ -14,6 +14,8 @@ time_t last_update = 0;
 //Prototypes
 bool read_data(const string& file);
 void sort_data(vector<float>&);
+void cleaning_data(vector<float>& vec);
+float simple_moving_average();
 bool check_change(const string& file);
 
 bool read_data(const string& file_loc) {
@@ -43,11 +45,19 @@ void cleaning_data(vector<float>& vec) {
     // What should be cleaned?
 }
 
+float simple_moving_average() {
+    float average = 0;
+
+    for (auto iter : file_data) {
+        average += iter;
+    }
+
+    return average /= file_data.size();
+}
+
 bool check_change (const string &file) {
     struct stat result;
-    if (stat(file.c_str(), &result) == 0)
-    {
-        if (result.st_mtime == last_update) return false;
-        else return true;
-    }
+    if (stat(file.c_str(), &result) != 0) return false;
+    if (result.st_mtime == last_update) return false;
+    return true;
 }
