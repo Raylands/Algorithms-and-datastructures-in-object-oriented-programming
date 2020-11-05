@@ -142,7 +142,9 @@
     <ClCompile Include="Moving Average.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Filehandling.hpp" />
+    <ClInclude Include="Deque_implementation.hpp" />
+    <ClInclude Include="Global.hpp" />
+    <ClInclude Include="Vector_implementation.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
