@@ -8,6 +8,7 @@ extern deque<float> Deque::file_data;
 extern vector<float> Vector::file_data;
 
 int main(int argc, char** argv) {
+START:
 	string file_location;
 	cout << "File name of input file (leave empty for data.txt): ";
 	std::getline(std::cin, file_location);
@@ -30,7 +31,13 @@ int main(int argc, char** argv) {
 
 	while (true)
 	{
-		if (GetAsyncKeyState(VK_SPACE)) break;
+		if (GetAsyncKeyState(VK_SPACE) & 0x8000) break;
+		if (GetAsyncKeyState(VK_BACK) & 0x8000)
+		{ 
+			system("cls");
+			last_update = 0;
+			goto START;
+		}
 
 		if (!check_change(file_location)) continue;
 		
@@ -120,7 +127,7 @@ int main(int argc, char** argv) {
 			break;
 		}
 
-		cout << "\nJust update the file to update the data.\n\nPress SPACE to exit!\n";
+		cout << "\nJust update the file to update the data.\n\nPress BACK to select a new dataset or press SPACE to exit!\n";
 	}
 
 	return EXIT_SUCCESS;
