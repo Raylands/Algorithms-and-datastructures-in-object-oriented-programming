@@ -6,8 +6,8 @@
 
 using namespace std;
 
-struct pairHash {
-    size_t operator()(const string& arg) const {
+struct pairHash : unary_function<const string&, size_t> {
+    size_t operator()(argument_type arg) const {
         unsigned int h = 0;
         for (int i = 0; i < arg.length(); i++)
         {
@@ -15,8 +15,9 @@ struct pairHash {
             h += (unsigned int)arg[i];
         }
         return h;
-    }   
+    }
 };
+
 
 struct pairEquals : binary_function<const string, const string, bool> {
     result_type operator()(first_argument_type lhs, second_argument_type rhs) const
