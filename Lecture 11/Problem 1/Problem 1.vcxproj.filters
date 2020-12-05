@@ -19,6 +19,9 @@
     <Filter Include="Enum">
       <UniqueIdentifier>{812a4750-8c44-485a-af10-68b90226bc8d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="File handling">
+      <UniqueIdentifier>{cbb2ddf8-fabf-4ff9-8048-12fe52420de3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Problem 1.cpp">
@@ -40,6 +43,9 @@
     </ClInclude>
     <ClInclude Include="Enum.hpp">
       <Filter>Enum</Filter>
+    </ClInclude>
+    <ClInclude Include="File_handler.h">
+      <Filter>File handling</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -146,6 +146,7 @@
   <ItemGroup>
     <ClInclude Include="Client.hpp" />
     <ClInclude Include="Enum.hpp" />
+    <ClInclude Include="File_handler.h" />
     <ClInclude Include="Hash.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
