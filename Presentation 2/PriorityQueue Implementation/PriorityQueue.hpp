@@ -18,46 +18,45 @@ private:
 
 
 
-template <typename E, typename C> // number of elements
-int ListPriorityQueue<E, C>::size() const
+template <typename E> // number of elements
+int ListPriorityQueue<E>::size() const
 {
 	return L.size();
 }
 
-template <typename E, typename C> // is the queue empty?
-bool ListPriorityQueue<E, C>::empty() const
+template <typename E> // is the queue empty?
+bool ListPriorityQueue<E>::empty() const
 {
 	return L.empty();
 }
 
-template <typename E, typename C> // insert element
-void ListPriorityQueue<E, C>::insert(const E& e, const std::function<bool(E, E)> f) {
-	typename std::list<E>::iterator p;
-	p = L.begin();
-	while (p != L.end() && !f(e, *p)) ++p; // find larger element
-	L.insert(p, e);								// insert e before p
+template <typename E> // insert element
+void ListPriorityQueue<E>::insert(const E& e, const std::function<bool(E, E)> f) {
+	typename std::list<E>::iterator p = L.begin();
+	while (p != L.end() && !f(e, *p)) p++;  // find larger element
+	L.insert(p, e);							// insert e before p
 }
 
-template <typename E, typename C> // minimum element
-const E& ListPriorityQueue<E, C>::min() const
+template <typename E> // minimum element
+const E& ListPriorityQueue<E>::min() const
 {
 	return L.front();	// minimum is always at the front
 } 
 
-template <typename E, typename C> // remove minimum
-void ListPriorityQueue<E, C>::removeMin()
+template <typename E> // remove minimum
+void ListPriorityQueue<E>::removeMin()
 {
 	L.pop_front();		// minimum is always at the front
 }
 
-template <typename E, typename C> // maxiumum element
-const E& ListPriorityQueue<E, C>::max() const
+template <typename E> // maxiumum element
+const E& ListPriorityQueue<E>::max() const
 {
 	return L.back();	// maximum is always at the back
 }
 
-template <typename E, typename C> // remove maximum
-void ListPriorityQueue<E, C>::removeMax()
+template <typename E> // remove maximum
+void ListPriorityQueue<E>::removeMax()
 {
 	L.pop_back();		// maximum is always at the back
 }

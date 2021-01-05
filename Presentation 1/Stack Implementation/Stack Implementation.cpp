@@ -11,7 +11,8 @@ int main()
 
     printf("VectorStack size: %d \n", VS.size());
     printf("VectorStack top: %d \n", VS.top());
-
+    printf("Removing top...\n");
     VS.pop();
-    printf("VectorStack top: %d \n", VS.top());
+    printf("VectorStack new size: %d \n", VS.size());
+    printf("VectorStack new top: %d \n", VS.top());
 }

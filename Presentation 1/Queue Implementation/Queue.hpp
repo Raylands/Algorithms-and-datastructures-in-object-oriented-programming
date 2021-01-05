@@ -1,5 +1,6 @@
 #pragma once
 #include "CircleList.hpp"
+
 class LinkedQueue { // queue as doubly linked list
 public:
 	LinkedQueue(); // constructor
