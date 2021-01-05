@@ -7,7 +7,7 @@
 #include <iostream>
 using namespace std;
 
-int maxlistlenght = 0; //A global variable!!
+int maxlistlenght = 0; 
 char menu();
 
 int main()

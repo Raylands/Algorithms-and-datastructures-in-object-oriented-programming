@@ -5,6 +5,8 @@
 
 using namespace std;
 
+extern int maxlistlenght;
+
 template <typename K, typename V, typename H>		// iterator to end
 typename HashTable<K, V, H>::Iterator HashTable<K, V, H>::end()
 {
@@ -35,9 +37,8 @@ void HashTable<K, V, H>::erase(const Iterator& p)
 template <typename K, typename V, typename H>		// remove entry with key k
 void HashTable<K, V, H>::erase(const K& k) {
 	Iterator p = finder(k);				// find k
-	if (endOfBkt(p))					// not found?
-		throw NonexistentElement("Erase of nonexistent");	// throw error
-	eraser(p);							// remove it
+	if (!endOfBkt(p))					// not found?
+		eraser(p);						// remove it
 }
 
 

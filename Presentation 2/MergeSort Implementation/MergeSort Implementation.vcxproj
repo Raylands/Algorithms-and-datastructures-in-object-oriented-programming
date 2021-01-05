@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{f6bf8147-f98a-464f-8d2f-ba71f87a5f6e}</ProjectGuid>
-    <RootNamespace>StackImplementation</RootNamespace>
+    <ProjectGuid>{3f2eb1fc-cec1-485c-a4a4-68e59d421dc9}</ProjectGuid>
+    <RootNamespace>MergeSortImplementation</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,11 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="VectorStack.cpp" />
-    <ClCompile Include="Stack Implementation.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="VectorStack.hpp" />
+    <ClCompile Include="MergeSort Implementation.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

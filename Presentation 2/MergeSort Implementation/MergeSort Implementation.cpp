@@ -9,8 +9,6 @@ void mergeSort(list<T>& S, const function<bool(int, int)> f);
 template <typename T>
 void merge(list<T>& S1, list<T>& S2, list<T>& S, const function<bool(T, T)> f);
 
-
-
 int main()
 {
     list<int> S;
@@ -65,7 +63,7 @@ void mergeSort(list<T>& S, const function<bool(int, int)> f) {
 }
 
 template <typename T>
-void merge(list<T>& S1, list<T>& S2, list<T>& S, const function<bool(T,T)> f) {
+void merge(list<T>& S1, list<T>& S2, list<T>& S, const function<bool(T, T)> f) {
     typename list<T>::iterator p1 = S1.begin();
     typename list<T>::iterator p2 = S2.begin();
 

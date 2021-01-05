@@ -1,6 +1,5 @@
 #include <iostream>
 #include "VectorStack.hpp"
-#include "VectorStack.cpp"
 
 int main()
 {
